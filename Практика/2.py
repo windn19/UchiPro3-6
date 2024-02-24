@@ -1,8 +1,4 @@
 def get_avg_unique_lists(lst1, lst2):
-    """
-    >>> get_avg_unique_lists([2, 4], [2, 3, 5, 6])
-    3.7
-    """
     numbers1 = dict()
     numbers2 = dict()
     for num in lst1:
@@ -17,15 +13,16 @@ def get_avg_unique_lists(lst1, lst2):
             numbers2[num] += 1
     unique1 = [key for key in numbers1 if numbers1[key] == 1]
     unique2 = [key for key in numbers2 if numbers2[key] == 1]
+    print(unique1)
+    print(unique2)
     unique = unique1 + unique2
     if not unique:
         return 0
     return round(sum(unique) / len(unique), 1)
 
 
-# lst1 = list(map(int, input().split()))
-# lst2 = list(map(int, input().split()))
-# print(get_avg_unique_lists(lst1, lst2))
+lst1 = list(map(int, input().split()))
+lst2 = list(map(int, input().split()))
+print(get_avg_unique_lists(lst1, lst2))
 
-# 1 1 1 2 3 3 4 5 5
-# 1 1 2 3 5 6 7 7
+
